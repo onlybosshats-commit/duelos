@@ -1,0 +1,10 @@
+{
+  "name": "mvs-duels-3d",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Juego 3D multijugador de persecución y captura inspirado en duelos por equipos",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "dev": "node server.js" },
+  "dependencies": { "express": "^4.21.2", "socket.io": "^4.8.1" },
+  "engines": { "node": ">=18" }
+}

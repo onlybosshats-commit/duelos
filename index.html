@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>MVS Duels 3D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game">
+    <header class="topbar">
+      <div class="brand"><span class="brand-red">MVS</span> DUELS <small>3D</small></div>
+      <div id="connection" class="connection">Conectando...</div>
+    </header>
+
+    <section id="menu" class="panel">
+      <div class="versus"><div class="side red">ASESINO</div><div class="vs">VS</div><div class="side blue">SHERIFF</div></div>
+      <h1>ELIGE TU DUELO</h1>
+      <p class="sub">Entra a una sala y juega con personas en tiempo real.</p>
+      <input id="playerName" maxlength="16" placeholder="Tu nombre" value="Jugador">
+      <div class="mode-row">
+        <button class="mode selected" data-mode="1v1">1 VS 1</button>
+        <button class="mode" data-mode="2v2">2 VS 2</button>
+        <button class="mode" data-mode="3v3">3 VS 3</button>
+      </div>
+      <button id="play" class="play">BUSCAR PARTIDA</button>
+      <p id="status" class="status">Selecciona un modo para comenzar.</p>
+      <div class="rules">ROJO: atrapa por contacto · AZUL: resiste 90 segundos</div>
+    </section>
+
+    <section id="hud" class="hud hidden">
+      <div class="hud-card"><span id="role" class="role">ESPERANDO</span><span id="room">Sala: --</span></div>
+      <div id="timer" class="timer">90</div>
+      <div id="players" class="players"></div>
+      <button id="back" class="back">SALIR</button>
+    </section>
+
+    <div id="result" class="result hidden">
+      <h2 id="resultTitle">RONDA TERMINADA</h2><p id="resultText"></p>
+      <button id="again">VOLVER AL LOBBY</button>
+    </div>
+    <div id="mobileControls" class="mobile-controls">
+      <button id="up">▲</button><div><button id="left">◀</button><button id="down">▼</button><button id="right">▶</button></div>
+    </div>
+    <div class="help">PC: WASD o flechas · Móvil: controles en pantalla</div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
