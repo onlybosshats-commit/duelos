@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io("https://duelos-2s43.onrender.com");
 const $ = id => document.getElementById(id);
 let selectedMode = "1v1", roomId = null, myId = null, roomState = null;
 let scene, camera, renderer, me, others = new Map(), arena;
